@@ -13,7 +13,8 @@
 	
 	<div class="header">
 		<div class="container">
-			<a href="#" class="logo">Razer<sup>™</sup></a>
+			<a href="#" class="logo">Razer</a>
+
 			<ul class="nav">
 				<li class="nav-item  active">
 					<a href="#" class="nav-link">Каталог</a>
@@ -31,16 +32,25 @@
 					<a href="#" class="nav-link">Поддержка</a>
 				</li>
 			</ul>
+
 			<div class="user-block">
-				<ion-icon name="contact"></ion-icon>
-				Привет,&nbsp;<span class="user-name">Евгений</span>&nbsp;
-				<span>(<a href="#" class="logout">Выйти</a>)</span>
+				<a href="#" class="user-options">
+					<ion-icon name="contact"></ion-icon>
+				</a>
+				<div class="greeting">
+					Привет,&nbsp;<span class="user-name">Евгений</span>&nbsp;
+					<span>(<a href="#" class="logout">Выйти</a>)</span>
+				</div>
 			</div>
+
 			<div class="basket">
 				<!-- icon -->
 				<a href="#" class="basket-link">
 					<ion-icon name="basket"></ion-icon>
-					Корзина&nbsp;<span>(<span class="i-amount  active">1</span>)</span>
+					<span class="basket-head">Корзина</span>&nbsp;
+					<span class="basket-cont">
+						(<span class="i-amount  active">1</span>)
+					</span>
 				</a>
 				<div class="shopping-cart">
 					<table class="i-cont">
@@ -60,6 +70,11 @@
 					</div>
 				</div>
 			</div>
+
+			<button class="menu-toggler">
+				<ion-icon name="menu"></ion-icon>
+				<ion-icon name="close"></ion-icon>
+			</button>
 		</div>
 	</div>
 
@@ -135,6 +150,7 @@
 						</div>
 					</div>
 				</div>
+				<div class="card  flex-fix"></div>
 			</div>
 		</div>
 
@@ -168,7 +184,7 @@
 				</ul>
 			</div>
 			<div class="footer-i">
-				<h3>Наши ресурсы</h3>
+				<h3>Соцсети</h3>
 				<span class="copyright">Copyright © 2019 <a href="#" class="to-main-site">Razer Inc</a>. Все права защищены.</span>
 				<ul class="social">
 					<li>

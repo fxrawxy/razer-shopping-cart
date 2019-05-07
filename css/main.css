@@ -77,6 +77,16 @@ ion-icon {
 	margin: 0 auto;
 }
 
+@media (max-width: 1199px) {
+
+	.container {
+		width: 100%;
+		margin: 0;
+		padding: 0 20px;
+	}
+
+}
+
 /**/
 
 
@@ -97,6 +107,14 @@ ion-icon {
 	padding: 25px 0;
 }
 
+@media (max-width: 1199px) {
+
+	.header .container {
+		padding: 25px 20px;
+	}
+
+}
+
 /**/
 
 
@@ -114,20 +132,20 @@ ion-icon {
 	text-transform: uppercase;
 }
 
+@media (max-width: 991px) {
+
+	.logo {
+		font-size: 24px;
+	}
+
+}
+
 .logo:hover {
 	color: #14c208;
 }
 
 .logo:active {
 	color: #14c20870;
-}
-
-.logo sup {
-	position: absolute;
-	top: 7px;
-	right: -7px;
-
-	font-size: 10px;
 }
 
 /**/
@@ -138,6 +156,14 @@ ion-icon {
 
 .nav {
 	display: flex;
+}
+
+@media (max-width: 991px) {
+
+	.nav {
+		display: none;
+	}
+
 }
 
 .nav-link {
@@ -167,11 +193,40 @@ ion-icon {
 	display: flex;
 	align-items: center;
 	margin-left: auto;
-	padding: 10px 15px;
+	height: 45px;
+	padding: 0 15px;
 
 	border: 1px solid transparent;
 
 	cursor: pointer;
+}
+
+.user-options {
+	display: flex;
+	align-items: center;
+}
+
+@media (max-width: 767px) {
+
+	.user-block {
+		justify-content: center;
+		width: 45px;
+		margin-right: 10px;
+		padding: 0;
+
+		border-color: #2b2b2b;
+	}
+
+	.user-options ion-icon {
+		margin: 0;
+
+		font-size: 24px;
+	}
+
+	.greeting {
+		display: none;
+	}
+
 }
 
 .user-block:hover {
@@ -201,9 +256,58 @@ ion-icon {
 	display: flex;
 	align-items: center;
 	margin-left: -1px;
-	padding: 10px 15px;
+	height: 45px;
+	padding: 0 15px;
 
 	border: 1px solid transparent;
+}
+
+@media (max-width: 767px) {
+
+	.basket-link {
+		position: relative;
+
+		justify-content: center;
+		margin: 0;
+		margin-right: 10px;
+		width: 45px;
+		padding: 0;
+
+		border-color: #2b2b2b;
+	}
+
+	.basket-link ion-icon {
+		margin: 0;
+
+		font-size: 24px;
+	}
+
+	.basket-head {
+		display: none;
+	}
+
+	.basket-cont {
+		font-size: 0;
+	}
+
+	.i-amount {
+		position: absolute;
+		top: -4px;
+		right: -4px;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 16px;
+		height: 16px;
+
+		font-size: 12px;
+		color: #fff !important;
+
+		background: #14c208;
+		border-radius: 50%;
+	}
+
 }
 
 .basket-link:hover {
@@ -226,6 +330,43 @@ ion-icon {
 	display: none;
 }
 
+.menu-toggler {
+	position: relative;
+
+	width: 45px;
+	height: 45px;
+	margin: 0;
+	margin-left: -1px;
+	padding: 0;
+
+	background: none;
+	border: 1px solid #2b2b2b;
+
+	cursor: pointer;
+}
+
+@media (min-width: 992px) {
+
+	.menu-toggler {
+		display: none;
+	}
+
+}
+
+.menu-toggler ion-icon {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	font-size: 24px;
+	color: #777;
+}
+
+.menu-toggler ion-icon[name="close"] {
+	display: none;
+}
+
 /**/
 
 
@@ -235,6 +376,14 @@ ion-icon {
 .breadcrumbs {
 	display: flex;
 	margin-bottom: 60px;
+}
+
+@media (max-width: 767px) {
+	
+	.breadcrumbs {
+		justify-content: center;
+	}
+	
 }
 
 .breadcrumbs a {
@@ -318,7 +467,7 @@ ion-icon {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	width: 277px;
+	width: calc((25% - 25px) + 3px); /* 4 cards * 25px = 100px / 3 margin = 33px | 33px - 3px = 30px */
 	margin-bottom: 30px;
 	padding: 20px;
 
@@ -327,6 +476,37 @@ ion-icon {
 	background: #1f1f1f;
 
 	cursor: pointer;
+}
+
+.card.flex-fix {
+	margin: 0;
+	padding: 0;
+
+	visibility: hidden;
+}
+
+@media (max-width: 1199px) {
+
+	.card {
+		width: calc(33.3% - 20px); /* 3 cards * 20px = 60px / 2 margin = 30px */
+	}
+
+}
+
+@media (max-width: 991px) {
+
+	.card {
+		width: calc(50% - 15px); /* 2 cards * 15px = 30px / 1 margin = 30px */
+	}
+
+}
+
+@media (max-width: 575px) {
+
+	.card {
+		width: 100%;
+	}
+
 }
 
 .card:hover {
@@ -440,8 +620,30 @@ ion-icon {
 	padding: 40px 0;
 }
 
+@media (max-width: 991px) {
+
+	.footer {
+		justify-content: center;
+	}
+
+}
+
 .footer-i {
 	width: 25%;
+}
+
+@media (max-width: 991px) {
+
+	.footer-i:not(:last-child) {
+		display: none;
+	}
+
+	.footer-i:last-child {
+		width: 100%;
+
+		text-align: center;
+	}
+
 }
 
 .footer-i h3 {
@@ -484,6 +686,14 @@ ion-icon {
 
 .social {
 	display: flex;
+}
+
+@media (max-width: 991px) {
+
+	.social {
+		justify-content: center;
+	}
+
 }
 
 .social li {
