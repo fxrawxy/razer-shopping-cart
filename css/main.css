@@ -37,7 +37,7 @@ body {
 	background: #181818;
 }
 
-h2, h3, h4, p {
+h1, h2, h3, h4, p {
 	margin: 0;
 	padding: 0;
 }
@@ -76,7 +76,10 @@ ion-icon {
 .header {
 	display: flex;
 	align-items: center;
-	padding-top: 25px;
+	margin-bottom: 20px;
+	padding: 25px 0;
+
+	border-bottom: 1px solid #2b2b2b;
 }
 
 /**/
@@ -161,6 +164,7 @@ ion-icon {
 }
 
 .logout {
+	font-weight: bold;
 	color: #14c208;
 }
 
@@ -195,8 +199,79 @@ ion-icon {
 	color: #777;
 }
 
+.i-amount {
+	font-weight: bold;
+}
+
+.i-amount.active {
+	color: #14c208;
+}
+
 .shopping-cart {
 	display: none;
+}
+
+/**/
+
+
+
+/* .breadcrumbs */
+
+.breadcrumbs {
+	display: flex;
+	margin-bottom: 60px;
+}
+
+.breadcrumbs a {
+	display: flex;
+
+	font-weight: bold;
+	font-size: 12px;
+	text-transform: uppercase;
+}
+
+.breadcrumbs a:after {
+	content: ">";
+
+	display: flex;
+	justify-content: center;
+	width: 20px;
+
+	color: #14c208;
+}
+
+.breadcrumbs li:last-child a:after {
+	display: none;
+}
+
+.breadcrumbs a.active {
+	color: #fff;
+}
+
+/**/
+
+
+
+/* .catalog-head */
+
+.catalog-head {
+	text-align: center;
+}
+
+.site-section {
+	display: block;
+
+	font-weight: bold;
+	font-size: 14px;
+	color: #14c208;
+	text-transform: uppercase;
+}
+
+.catalog-category {
+	font-weight: 300;
+	font-size: 36px;
+	color: #fff;
+	text-transform: uppercase;
 }
 
 /**/
