@@ -4,9 +4,17 @@ body #181818
 
 text #777
 
-border #2b2b2b
+border 1 #2b2b2b
+
+border 2 #454545
 
 green #14c208
+
+card #1f1f1f
+
+card hover #2b2b2b
+
+gradient #35f235 #04e300
 
 */
 
@@ -255,6 +263,8 @@ ion-icon {
 /* .catalog-head */
 
 .catalog-head {
+	margin-bottom: 90px;
+
 	text-align: center;
 }
 
@@ -272,6 +282,127 @@ ion-icon {
 	font-size: 36px;
 	color: #fff;
 	text-transform: uppercase;
+}
+
+/**/
+
+
+
+/* .catalog-body */
+
+.catalog-body {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.card {
+	display: flex;
+	flex-direction: column;
+	width: calc(25% - 25px);
+	margin-bottom: 30px;
+	padding: 20px;
+
+	text-align: center;
+
+	background: #1f1f1f;
+
+	cursor: pointer;
+}
+
+.card:hover {
+	background: #2b2b2b;
+}
+
+.card:hover .card-cont {
+	visibility: hidden;
+}
+
+.card:hover .card-l {
+	display: flex;
+
+	visibility: visible;
+}
+
+.card-img {
+	max-width: 100%;
+	max-height: 160px;
+	margin-bottom: 20px;
+}
+
+.card-cont {
+	position: relative;
+
+	flex-grow: 1;
+	min-height: 170px;
+}
+
+.card-name {
+	margin-bottom: 5px;
+
+	font-size: 14px;
+	color: #fff;
+	text-transform: uppercase;
+}
+
+.card-price {
+	display: block;
+	margin-bottom: 15px;
+
+	font-weight: bold;
+	font-size: 12px;
+	color: #14c208;
+}
+
+.card-descr {
+	font-size: 14px;
+}
+
+.card-l {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	display: none;
+}
+
+.btn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100px;
+	height: 30px;
+
+	font-weight: 900;
+	font-size: 10px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	color: #14c208;
+
+	border: 1px solid #454545;
+}
+
+.btn:hover {
+	color: #000;
+
+	background: linear-gradient(to bottom, #35f235, #04e300);
+	border: none;
+}
+
+.btn:active {
+	color: #00000070;
+
+	background: linear-gradient(to top, #35f235, #04e300);
+}
+
+.add-to-cart {
+	margin-right: 10px;
+
+	color: #000;
+
+	background: linear-gradient(to bottom, #35f235, #04e300);
+	border: none;
 }
 
 /**/
