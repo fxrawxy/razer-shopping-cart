@@ -47,6 +47,19 @@ body {
 	background: #181818;
 }
 
+.cover {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 1; /* < .nav */
+
+	background: #000;
+
+	opacity: 0.5;
+}
+
 h1, h2, h3, h4, p {
 	margin: 0;
 	padding: 0;
@@ -140,6 +153,16 @@ ion-icon {
 
 }
 
+@media (max-width: 575px) {
+
+	.logo {
+		margin-right: 0;
+
+		letter-spacing: 5px;
+	}
+
+}
+
 .logo:hover {
 	color: #14c208;
 }
@@ -155,15 +178,11 @@ ion-icon {
 /* .nav */
 
 .nav {
-	display: flex;
+	display: block;
 }
 
-@media (max-width: 991px) {
-
-	.nav {
-		display: none;
-	}
-
+.nav ul {
+	display: flex;
 }
 
 .nav-link {
@@ -179,8 +198,166 @@ ion-icon {
 	color: #ffffff30;
 }
 
+.nav-link ion-icon {
+	display: none;
+}
+
 .nav-item.active .nav-link {
 	color: #14c208;
+}
+
+@media (max-width: 991px) {
+
+	.nav {
+		position: absolute;
+		top: 0;
+		left: calc( (40% + 45px) / -1 );
+		z-index: 2; /* > .cover */
+
+		display: block;
+		width: 40%;
+		height: 100vh;
+		padding-top: 95px;
+		padding-left: 70px;
+
+		background: #2b2b2b;
+		box-shadow: 0 0 10px #00000090;
+
+		transition: left 500ms ease;
+	}
+
+	.nav:after {
+		content: "Razer";
+
+		position: absolute;
+		top: 0;
+		left: 0;
+
+		display: flex;
+		align-items: center;
+		height: 95px;
+		padding-left: 70px;
+
+		font-size: 24px;
+		letter-spacing: 10px;
+		color: #14c208;
+		text-transform: uppercase;
+	}
+
+	.nav ul {
+		display: block;
+	}
+
+	.nav-item {
+		margin-bottom: 15px;
+	}
+
+	.nav-link {
+		display: flex;
+		align-items: center;
+		padding: 10px 0;
+	}
+
+	.nav-link ion-icon {
+		display: block;
+		margin-right: 20px;
+	}
+
+	.nav-item.active .nav-link {
+		border-right: 2px solid #14c208;
+	}
+}
+
+@media (max-width: 767px) {
+
+	.nav {
+		left: calc( (70% - 20px + 45px) / -1 );
+
+		width: calc(70% - 65px);
+	}
+
+}
+
+@media (max-width: 575px) {
+
+	.nav {
+		left: calc( (100% - 20px + 45px) / -1 );
+
+		width: calc(100% - 65px);
+	}
+
+	.nav:after {
+		letter-spacing: 5px;
+	}
+
+}
+
+.menu-toggler {
+	position: relative;
+
+	width: 45px;
+	height: 45px;
+	margin: 0;
+	margin-left: -1px;
+	padding: 0;
+
+	background: none;
+	border: 1px solid #2b2b2b;
+
+	cursor: pointer;
+}
+
+@media (min-width: 992px) {
+
+	.menu-toggler {
+		display: none;
+		margin: 0;
+	}
+
+}
+
+.menu-toggler ion-icon {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	font-size: 24px;
+	color: #777;
+}
+
+.menu-toggler.menu-open:hover {
+	border-color: #fff;
+}
+
+.menu-toggler.menu-open:active {
+	border-color: #ffffff30;
+}
+
+.menu-toggler.menu-open:hover ion-icon[name="menu"] {
+	color: #fff;
+}
+
+.menu-toggler.menu-open:active ion-icon[name="menu"] {
+	color: #ffffff30;
+}
+
+.menu-toggler.menu-close {
+	position: absolute;
+	top: 25px;
+	right: -45px;
+	z-index: 2;
+
+	background: #2b2b2b;
+	border: none;
+}
+
+.menu-toggler ion-icon[name="close"] {
+	color: #fff;
+}
+
+.menu-toggler.menu-close:active ion-icon[name="close"] {
+	color: #ffffff30;
 }
 
 /**/
@@ -206,6 +383,10 @@ ion-icon {
 	align-items: center;
 }
 
+.user-block:hover {
+	border-color: #2b2b2b;
+}
+
 @media (max-width: 767px) {
 
 	.user-block {
@@ -215,6 +396,22 @@ ion-icon {
 		padding: 0;
 
 		border-color: #2b2b2b;
+	}
+
+	.user-block:hover {
+		border-color: #fff;
+	}
+
+	.user-block:active {
+		border-color: #ffffff30;
+	}
+
+	.user-block:hover ion-icon {
+		color: #fff;
+	}
+
+	.user-block:active ion-icon {
+		color: #ffffff30;
 	}
 
 	.user-options ion-icon {
@@ -227,10 +424,6 @@ ion-icon {
 		display: none;
 	}
 
-}
-
-.user-block:hover {
-	border-color: #2b2b2b;
 }
 
 .logout {
@@ -262,6 +455,14 @@ ion-icon {
 	border: 1px solid transparent;
 }
 
+.basket-link:hover {
+	border-color: #2b2b2b;
+}
+
+.basket-link:hover {
+	color: #777;
+}
+
 @media (max-width: 767px) {
 
 	.basket-link {
@@ -274,6 +475,22 @@ ion-icon {
 		padding: 0;
 
 		border-color: #2b2b2b;
+	}
+
+	.basket-link:hover {
+		border-color: #fff;
+	}
+
+	.basket-link:active {
+		border-color: #ffffff30;
+	}
+
+	.basket-link:hover ion-icon {
+		color: #fff;
+	}
+
+	.basket-link:active ion-icon {
+		color: #ffffff30;
 	}
 
 	.basket-link ion-icon {
@@ -310,14 +527,6 @@ ion-icon {
 
 }
 
-.basket-link:hover {
-	border-color: #2b2b2b;
-}
-
-.basket-link:hover {
-	color: #777;
-}
-
 .i-amount {
 	font-weight: bold;
 }
@@ -327,43 +536,6 @@ ion-icon {
 }
 
 .shopping-cart {
-	display: none;
-}
-
-.menu-toggler {
-	position: relative;
-
-	width: 45px;
-	height: 45px;
-	margin: 0;
-	margin-left: -1px;
-	padding: 0;
-
-	background: none;
-	border: 1px solid #2b2b2b;
-
-	cursor: pointer;
-}
-
-@media (min-width: 992px) {
-
-	.menu-toggler {
-		display: none;
-	}
-
-}
-
-.menu-toggler ion-icon {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-
-	font-size: 24px;
-	color: #777;
-}
-
-.menu-toggler ion-icon[name="close"] {
 	display: none;
 }
 
@@ -629,7 +801,7 @@ ion-icon {
 }
 
 .footer-i {
-	width: 25%;
+	width: calc((25% - 25px) + 3px);
 }
 
 @media (max-width: 991px) {
