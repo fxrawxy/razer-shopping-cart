@@ -533,7 +533,7 @@ ion-icon {
 		font-size: 0;
 	}
 
-	.i-amount {
+	.i-amount.active {
 		position: absolute;
 		top: -4px;
 		right: -4px;
@@ -671,28 +671,25 @@ ion-icon {
 	color: #14c208;
 }
 
-.shopping-cart td:nth-child(4) {
+.shopping-cart td:nth-child(4) ion-icon {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	width: 24px;
-	height: 24px;
+	width: 21px;
+	height: 21px;
+	margin: 0;
 
 	cursor: pointer;
 }
 
-.shopping-cart td:nth-child(4):hover {
+.shopping-cart td:nth-child(4) ion-icon:hover {
 	color: #000;
 
 	background: #14c208;
 }
 
-.shopping-cart td:nth-child(4):active {
+.shopping-cart td:nth-child(4) ion-icon:active {
 	color: #00000070;
-}
-
-.shopping-cart td:nth-child(4) ion-icon {
-	margin-right: 0;
 }
 
 .i-order {
