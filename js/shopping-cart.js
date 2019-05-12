@@ -1,6 +1,7 @@
 // bugs
 
-// totalPrice is NaN when clicked at 'shoppingCartCont' tr
+// totalPrice is NaN when clicked at 'shoppingCartCont' tr - fixed
+// if you delete one item, then two items with same id will be removed from the local storage - fixed
 
 
 
@@ -137,18 +138,6 @@ function calculatePrice(item) {
 	totalPrice.textContent = total;
 }
 
-// remove price
-function removePrice(itemPrice) {
-	// save current total price to var
-	let total = parseInt(totalPrice.textContent);
-
-	// remove item price from total
-	total = total - parseInt(itemPrice);
-
-	// write total into totalPrice
-	totalPrice.textContent = total;
-}
-
 // save into local storage
 function saveIntoStorage(item) {
 	// get array from local storage
@@ -205,10 +194,10 @@ function printFromStorage() {
 		shoppingCartCont.appendChild(row);
 
 		// save current total price to var
-		let total = parseInt(totalPrice.textContent);
+		let total = totalPrice.textContent;
 
 		// add item price to total
-		total = total + parseInt(item.priceData);
+		total = parseInt(total) + parseInt(item.priceData);
 
 		// write total into totalPrice
 		totalPrice.textContent = total;
@@ -223,6 +212,18 @@ function printFromStorage() {
 	});
 }
 
+// remove price
+function removePrice(itemPrice) {
+	// save current total price to var
+	let total = parseInt(totalPrice.textContent);
+
+	// remove item price from total
+	total = total - parseInt(itemPrice);
+
+	// write total into totalPrice
+	totalPrice.textContent = total;
+}
+
 // remove from cart
 function removeFromCart(e) {
 	let item, itemId, itemPrice;
@@ -235,13 +236,13 @@ function removeFromCart(e) {
 
 		itemId = item.querySelector('ion-icon').getAttribute('data-id');
 		itemPrice = item.querySelector('.data-price').getAttribute('data-price');
+
+		// remove price
+		removePrice(itemPrice);
+
+		// remove from local storage
+		removeFromStorage(itemId);
 	}
-
-	// remove price
-	removePrice(itemPrice);
-
-	// remove from local storage
-	removeFromStorage(itemId);
 
 	// update count of items in 'itemAmount'
 	itemAmount.innerHTML = shoppingCartCont.childElementCount;
@@ -261,12 +262,14 @@ function removeFromStorage(id) {
 	// get array from local storage
 	let itemsLS = getFromStorage();
 
-	// remove item from array
-	itemsLS.forEach(function(itemLS, index) {
-		if (itemLS.id === id) {
-			itemsLS.splice(index, 1);
+	for (var i = 0, len = itemsLS.length; i < len; i++) {
+		if (itemsLS[i].id === id) {
+
+			itemsLS.splice(i, 1);
+
+			break;
 		}
-	});
+	}
 
 	// apply changes
 	localStorage.setItem('items', JSON.stringify(itemsLS));

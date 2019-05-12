@@ -134,41 +134,22 @@ ion-icon {
 
 /* .logo */
 
-.logo {
-	position: relative; /* ™ */
-
+.logo img {
+	width: 130px;
 	margin-right: 15px;
-
-	font-size: 28px;
-	letter-spacing: 10px;
-	color: #14c208;
-	text-transform: uppercase;
 }
 
-@media (max-width: 991px) {
-
-	.logo {
-		font-size: 24px;
-	}
-
+.logo:active img {
+	opacity: 0.3;
 }
 
 @media (max-width: 575px) {
 
-	.logo {
-		margin-right: 0;
-
-		letter-spacing: 5px;
+	.logo img {
+		width: 110px;
+		margin: 0;
 	}
 
-}
-
-.logo:hover {
-	color: #14c208;
-}
-
-.logo:active {
-	color: #14c20870;
 }
 
 /**/
@@ -807,6 +788,8 @@ ion-icon {
 }
 
 .site-section {
+	position: relative;
+
 	display: block;
 
 	font-weight: bold;
@@ -816,6 +799,8 @@ ion-icon {
 }
 
 .catalog-category {
+	position: relative;
+
 	font-weight: 300;
 	font-size: 36px;
 	color: #fff;
